@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -21,7 +20,8 @@ const allCategories = ['all',...new Set(menu.map(menu => menu.category))];
  return <div className='btn-container'>
     {allCategories.map((category,index) => {
       return <button 
-      type="button" class="bg-white rounded-full text-red-800 text-3xl hover:bg-yellow-100 font-bold px-3 py-2 leading-none flex items-center mr-6 "
+      type='button' 
+      className='filter-btn' 
         key={index}
         onClick={() => filterItems(category)}
         >

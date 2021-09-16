@@ -45,7 +45,7 @@ const Book = (props) => {
 			.then(axios.spread((req1, req2) => {	
 				console.log(req1, req2)
             }));
-			// history.push("/");
+			history.push("/thankyou");
 		
 		}
 return ( 

@@ -1,5 +1,4 @@
-import React, { useState, useEffect ,useContext } from "react";
-import axios from 'axios';
+import React, {  useContext } from "react";
 import CartContext from "./CartContext";
 import formatCurrency from "format-currency";
 

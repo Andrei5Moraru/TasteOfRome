@@ -1,35 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import items from '../util/data';
 import axios from 'axios';
-import Categories from './category';
+import Categories from './categoryMenu';
 
 function Menu () {
    const [menu, setMenu] = useState([]);
+   const [menuCopy, setMenuCopy] = useState([]);
 
     useEffect(()=>{
         const fetchItems = async()=>{
             const response = await axios("http://localhost:8080/api/v1/menu")
             const data = response.data;
             setMenu(data);
+            setMenuCopy(data);
             
         }
         fetchItems()
     },[])
     
     const itemes = menu
-    console.log(itemes.category)
-    const allCategories = [...new Set(itemes.map(itemes => itemes.category))];
-
-
-    const [categories, setCategories] = useState(allCategories)
-
     const filterItems = (category) => {
         if (category === 'all') {
-            setMenu(itemes)
+            setMenuCopy(itemes)
             return
             }
     const newItems = itemes.filter((itemes) => itemes.category === category)
-    setMenu(newItems)
+    setMenuCopy(newItems)
   }
 
 
@@ -40,12 +35,12 @@ return (
       <h2>our menu</h2>
       <div className='underline'></div>
     </div>
-    <Categories categories={categories} filterItems={filterItems} />
+    <Categories filterItems={filterItems} />
     
     {/* <Menu items={menuItems} /> */}
     <div className='section-center'>
      
-        {itemes.map((data,index)=>{
+        {menuCopy.map((data,index)=>{
 
         
         return <article key={data.id} className='menu-item'>

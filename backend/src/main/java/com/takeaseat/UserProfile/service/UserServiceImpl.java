@@ -18,27 +18,19 @@ import java.util.Optional;
 @AllArgsConstructor
 public class UserServiceImpl implements UserDetailsService {
 
-
-
     private UserRepository userRepository;
-
-
 
     public Optional<UserModel> findByEmail(String name) {
         return userRepository.findByEmail(name);
     }
 
-
     public UserModel save(UserModel userModel) {
         return userRepository.save(userModel);
-
     }
-
 
     public List<UserModel> findAll() {
         return userRepository.findAll();
     }
-
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -47,6 +39,10 @@ public class UserServiceImpl implements UserDetailsService {
 
         return new User(users.getEmail(), users.getPassword(),
                 Collections.singletonList(new SimpleGrantedAuthority(users.getRole().name())));
+    }
+
+    public String getFirstName(String username){
+        return findByEmail(username).get().getFirstName();
     }
 
     public int enableUser(String email) {

@@ -16,6 +16,8 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Getter
+@Setter
 public class UserModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -34,5 +36,7 @@ public class UserModel implements Serializable {
     public boolean isEnabled() {
         return enabled;
     }
+
+
 
 }

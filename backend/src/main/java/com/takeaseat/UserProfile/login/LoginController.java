@@ -42,22 +42,25 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity login(@RequestBody UserModel data){
+    public ResponseEntity login(@RequestBody UserModel user){
         try {
-            String username = data.getEmail();
+            String username = user.getEmail();
             // authenticationManager.authenticate calls loadUserByUsername in CustomUserDetailsService
-            Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, data.getPassword()));
+            Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, user.getPassword()));
             List<String> roles = authentication.getAuthorities()
                     .stream()
                     .map(GrantedAuthority::getAuthority)
                     .collect(Collectors.toList());
 
             String token = jwtTokenServices.createToken(username, roles);
+            String firstName = userService.getFirstName(username);
+
 
             Map<Object, Object> model = new HashMap<>();
             model.put("username", username);
             model.put("roles", roles);
             model.put("token", token);
+            model.put("firstName",firstName);
             return ResponseEntity.ok(model);
         } catch (AuthenticationException e) {
             throw new BadCredentialsException("Invalid username/password supplied");

@@ -3,25 +3,39 @@ import axios from 'axios';
 import { useContext } from "react";
 import formatCurrency from "format-currency";
 import CartContext from "../components/cart/CartContext";
-
+import Categories from "./category";
 
 const Delivery = (props) => {
 
     const [menu, setMenu] = useState([]);
+    const [menuCopy, setMenuCopy]= useState([]);
 
 useEffect(()=>{
     const fetchItems = async()=>{
         const response = await axios("http://localhost:8080/api/v1/menu")
         const data = response.data;
         setMenu(data);
+        setMenuCopy(data);
         
     }
     fetchItems()
 },[])
 
-const product = menu
 const { addToCart } = useContext(CartContext);
 let opts = { format: "%s%v", symbol: "€" };
+
+
+const filterItems = (category) => {
+    console.log(category)
+    if (category === 'all') {
+      setMenuCopy(menu)
+      return
+    }
+    const newItems = menu.filter((menu) => menu.category === category)
+    setMenuCopy(newItems)
+    console.log(newItems)
+  }
+
 
 
 return ( 
@@ -30,21 +44,13 @@ return (
         
         <div class="font-semibold font-mono text-6xl sm:text-8xl  flex justify-center leading-none dark:text-white text-red-900 p-16 "> Home delivery</div>        
             <div class="flex justify-center mb-6 mt-16 mr-96 ml-96  rounded-full p-4">
-            
-        <button type="button" class="bg-white rounded-full text-red-800 text-3xl hover:bg-red-900 font-bold px-3 py-2 leading-none flex items-center mr-6 ">
-                         pizza
-                        </button> 
-        <button type="button" class="bg-white rounded-full text-red-800 text-3xl hover:bg-red-900 font-bold px-3 py-2 leading-none flex items-center mr-6 ">
-                         pasta
-                        </button> 
-        <button type="button" class="bg-white rounded-full text-red-800 text-3xl hover:bg-red-900 font-bold px-3 py-2 leading-none flex items-center mr-6 ">
-                         risotto
-                        </button> 
+
+                        <Categories filterItems={filterItems} />
         </div>
         
     <div class=" sm:flex flex-wrap justify-center items-center text-center gap-12 ">
         
-        {product.map((data,index)=>{
+        {menuCopy.map((data,index)=>{
           
            return <article class="pizza w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 bg-white mt-6 border-4 border-red-900 shadow-lg rounded-lg dark:bg-gray-800" key={data.id} >
                <img src={data.image} alt={data.name} className='photo'/>

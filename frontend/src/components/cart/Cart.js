@@ -12,7 +12,7 @@ const Cart = () => {
   return (
     <div>
       {showCart && (
-        <div className='cart__wrapper bg-opacity-70'>
+        <div className='cart__wrapper  mt-6'>
           <div style={{ textAlign: "right" }}>
             <i
               style={{ cursor: "pointer" }}

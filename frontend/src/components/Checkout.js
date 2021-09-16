@@ -2,11 +2,10 @@ import React ,{ useContext } from "react";
 import CartContext from "./cart/CartContext";
 import formatCurrency from "format-currency";
 import CartItem from "./cart/CartItem";
-import { NavLink } from "react-router-dom";
 
 const Checkout = () => {
   
-  const { showCart, cartItems, showHideCart } = useContext(CartContext);
+  const { cartItems } = useContext(CartContext);
   let opts = { format: "%s%v", symbol: "€" };
 
   return (
