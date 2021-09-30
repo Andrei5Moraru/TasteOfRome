@@ -5,12 +5,15 @@ import { useContext } from "react";
 import logo from "../images/pizza-slice_logo.png";
 import { FIRSTNAME_ATOM } from '../util/UserContext';
 import { useAtom } from 'jotai';
+import { useState } from 'react';
+import { sumItems } from './cart/CartReducer';
 
 
 const Navbar = () => {
     const { cartItems, showHideCart } = useContext(CartContext);
     const [firstName, setFirstName] = useAtom(FIRSTNAME_ATOM);
-
+    // const { itemCount } = useState((state) => state.cart);
+    console.log();
     return (
 
 
@@ -42,14 +45,14 @@ const Navbar = () => {
                             />
                             {cartItems.length > 0 && (
                                 <div className='item__count bg-white'>
-                                    <span>{cartItems.length}</span>
+                                    <span>{sumItems(cartItems).itemCount}</span>
                                 </div>
                             )}
                         </div>
                         {firstName ?
-                        <Fragment>
-                            <li><NavLink to="/">Welcome, {firstName}</NavLink></li>
-                            <li><button class="fas fa-sign-out-alt" onClick={()=>setFirstName(null)}>Logout</button></li>
+                            <Fragment>
+                                <li><NavLink to="/profile">Welcome, {firstName}</NavLink></li>
+                                <li><button class="fas fa-sign-out-alt" onClick={() => setFirstName(null)}>Logout</button></li>
                             </Fragment>
                             : <Fragment>
                                 <li> <NavLink to='/register' exact activeStyle={{ color: 'white' }}>Sign Up</NavLink></li>

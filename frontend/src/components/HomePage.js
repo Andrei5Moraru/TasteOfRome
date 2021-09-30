@@ -6,38 +6,38 @@ class HomePage extends Component {
 
 
 	render() {
-		return ( 
+		return (
 			<div>
-			
-	
-		
-		<div className="home">	
-			<div className="dark:bg-red-800 overflow-hidden">
-				<div className="container mx-96 px-6  py-96 ">
-					<div className="c p-10 mt-8 rounded-lg " >
-						
-						<h1 className="font-semibold uppercase text-6xl sm:text-8xl mr-auto ml-auto flex flex-col leading-none dark:text-white text-white">
-							Probably
-							<span 
-								className="text-5xl sm:text-7xl z-30">
-								The best food in town
-							</span>
-						</h1>
-						
-						<div className="flex mt-8">
 
-							<Link to={"/book"} className="font-bold hover:underline uppercase py-2 px-16 rounded-lg bg-white border-2 border-black text-red-900 dark:text-white hover:bg-yellow text-md">
-								BOOK A TABLE
-							</Link>
-					
+
+
+				<div className="home">
+					<div className="dark:bg-red-800 overflow-hidden">
+						<div className="container mx-96 px-6  py-96 ">
+							<div className="c p-10 mt-8 rounded-lg " >
+
+								<h1 className="font-semibold uppercase text-6xl sm:text-8xl mr-auto ml-auto flex flex-col leading-none dark:text-white text-white">
+									Probably
+									<span
+										className="text-5xl sm:text-7xl z-30">
+										The best food in town
+									</span>
+								</h1>
+
+								<div className="flex mt-8">
+
+									<Link to={"/book"} className="font-bold hover:underline uppercase py-2 px-16 rounded-lg bg-white border-2 border-black text-red-900 dark:text-white hover:bg-yellow text-md">
+										BOOK A TABLE
+									</Link>
+
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
 
 
-		{/* <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+				{/* <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
 			
 			
 			<div class="carousel relative rounded relative overflow-hidden shadow-xl">
@@ -95,9 +95,9 @@ class HomePage extends Component {
 			
 			  </div>
 			</div> */}
-			
-	
-		</div>
+
+
+			</div>
 		);
 	}
 }

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useHistory } from 'react-router';
 import { FIRSTNAME_ATOM } from '../util/UserContext';
 import { useAtom } from 'jotai';
+import { Form } from 'react-bootstrap';
 
 const Login = (props) => {
 
@@ -22,6 +23,10 @@ const Login = (props) => {
         setPassword(password);
     };
 
+    const handleSubmit= (event) => {
+        event.preventDefault();
+      }
+   
     const handleLogin = async () => {
         const response = await axios.post("http://localhost:8080/api/v1/login", {
             email,
@@ -35,11 +40,11 @@ const Login = (props) => {
 
     return (
         <div class="flex flex-col ml-auto mr-auto mb-96  mt-44 w-full max-w-md px-4 py-8 bg-white bg-opacity-70 rounded-lg shadow dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10">
-            <div class="self-center mb-6 text-xl font-light text-gray-600 sm:text-2xl dark:text-white">
+            <div class="self-center mb-6 text-xl font-bold text-gray-600 sm:text-2xl dark:text-white">
                 Login To Your Account
             </div>
             <div class="mt-8">
-                <form action="#" onSubmit={handleLogin}
+                <Form onSubmit={handleSubmit}
                     className="flex flex-col"
                 >
                     <div class="flex flex-col mb-2">
@@ -72,11 +77,11 @@ const Login = (props) => {
                         </div>
                     </div> */}
                     <div class="flex w-full">
-                        <button type="submit" class="c py-2 px-4 hover:bg-red-600 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                        <button type="submit" class="c py-2 px-4 hover:bg-red-600 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg " onClick={handleLogin}>
                             Login
                         </button>
                     </div>
-                </form>
+                </Form>
             </div>
             <div class="flex items-center justify-center mt-6">
                 <a href="/register" target="_blank" class="inline-flex items-center text-xs font-thin text-center text-gray-500 hover:underline hover:text-gray-700 dark:text-gray-100 dark:hover:text-white">

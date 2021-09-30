@@ -72,12 +72,12 @@ const RegistrationPage = () => {
     return (
 
         <div class="flex flex-col content-center ml-auto mr-auto mt-40 mb-64 max-w-md px-4 py-8 bg-white bg-opacity-70 rounded-lg shadow dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10 ">
-            <div class="self-center mb-2 text-xl font-light text-gray-800 sm:text-2xl dark:text-white">
+            <div class="self-center mb-2 text-xl font-bold text-gray-800 sm:text-2xl dark:text-white">
                 Create a new account
             </div>
-            <span class="justify-center text-sm text-center text-gray-500 flex-items-center dark:text-gray-400">
+            <span class="justify-center text-sm text-center text-black flex-items-center dark:text-gray-400">
                 Already have an account ?
-                <a href="/login" target="_blank" class="text-sm text-blue-500 hover:underline hover:text-blue-700">
+                <a href="/login" target="_blank" class="ml-2 text-sm text-blue-500 hover:underline hover:text-blue-700">
                     Sign in
                 </a>
             </span>
