@@ -14,6 +14,7 @@ import Cart from './components/cart/Cart';
 import Checkout from './components/Checkout';
 import Thankyou from './components/thankyou';
 import Profile from './components/profile';
+import ThankYouOrder from './components/ThankYouOrder';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
           <Route path='/delivery' render={(props) => <Delivery {...props} />} />
           <Route path='/checkout' render={(props) => <Checkout {...props} />} />
           <Route path='/thankyou' render={(props) => <Thankyou {...props} />} />
+          <Route path='/thankyouorder' render={(props) => <ThankYouOrder {...props} />} />
           <Route path='/profile' render={(props) => <Profile {...props} />} />
         </div>
         <Footer />

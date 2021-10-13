@@ -152,9 +152,7 @@ li a:hover{
   box-shadow:4px 1px 3px rgba(47, 47, 47, 0.66);
   color: rgb(255, 255, 255);
 }
-.singleJob{
-  padding-bottom: 90px;
-}
+
 .c{
 	background-color: #5a141f;
 }
@@ -575,7 +573,7 @@ body{
     font-weight: 300;
 }
 form input[type = text], form input[type = number], form input::placeholder, select{
-    color: #9a9a9a;
+    color: black;
 }
 form input[type = submit]{
     color: #fff;

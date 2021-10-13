@@ -5,7 +5,6 @@ import { useContext } from "react";
 import logo from "../images/pizza-slice_logo.png";
 import { FIRSTNAME_ATOM } from '../util/UserContext';
 import { useAtom } from 'jotai';
-import { useState } from 'react';
 import { sumItems } from './cart/CartReducer';
 
 
@@ -24,7 +23,7 @@ const Navbar = () => {
 
                         <div className="logo">
 
-                            <NavLink to='/'> <a href><img className="logo" src={logo} alt="" width="70" /></a> </NavLink>
+                            <NavLink to='/'> <img className="logo" src={logo} alt="" width="70" /> </NavLink>
 
                         </div>
                         <div className="logo ml-6">

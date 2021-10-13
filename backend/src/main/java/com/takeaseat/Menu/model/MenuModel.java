@@ -5,10 +5,6 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Time;
-import java.time.LocalDate;
-import java.util.Date;
-import java.util.UUID;
 
 @Entity
 @Table(name = "Menu")
@@ -26,7 +22,6 @@ class MenuModel implements Serializable {
     private String description;
 
     private String image;
-
 
 
 }

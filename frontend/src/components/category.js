@@ -21,7 +21,7 @@ const Categories = ({ filterItems }) => {
   return <div className='btn-container'>
     {allCategories.map((category, index) => {
       return <button
-        type="button" class="bg-white rounded-full text-red-800 text-3xl hover:bg-yellow-100 font-bold px-3 py-2 leading-none flex items-center mr-6 "
+        type="button" className="bg-white rounded-full text-red-800 text-3xl hover:bg-yellow-100 font-bold px-3 py-2 leading-none flex items-center mr-6 "
         key={index}
         onClick={() => filterItems(category)}
       >

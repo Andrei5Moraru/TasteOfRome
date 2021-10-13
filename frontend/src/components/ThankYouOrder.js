@@ -12,8 +12,8 @@ const ThankYou = () =>{
 
 
 					<h1 className="text-4xl font-bold uppercase text-red-900 transition duration-500">Thank you</h1>
-					<h2 className="text-xl text-gray-700 transition duration-500">Your booking has been saved </h2>
-					<NavLink to='/menu' className="p-2 pl-6 pr-6 flex justify-center mr-auto ml-auto bg-red-900 text-yellow-100 rounded"> Return to Menu</NavLink>
+					<h2 className="text-xl text-gray-700 transition duration-500">Your Order has been submited </h2>
+					<NavLink to='/profile' className="p-2 pl-6 pr-6 flex justify-center mr-auto ml-auto bg-red-900 text-yellow-100 rounded"> Return to Profile</NavLink>
 				</div>
 			</div>
 		);

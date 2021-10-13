@@ -1,4 +1,4 @@
-import { SHOW_HIDE_CART, ADD_TO_CART, REMOVE_ITEM, INCREASE, DECREASE } from "./Types";
+import { SHOW_HIDE_CART, ADD_TO_CART, REMOVE_ITEM, INCREASE, DECREASE,REMOVE_ALL } from "./Types";
 
 
 const storeCartItems = (cartItems)=>{
@@ -35,7 +35,13 @@ const CartReducer = (state, action) => {
         ...sumItems(state.cartItems)
       }
        
-    
+    case REMOVE_ALL:
+      state.cartItems=[]
+      return {
+        ...state,
+        ...sumItems(state.cartItems)
+      };
+
     case REMOVE_ITEM: 
       const newCartItems = state.cartItems.filter(
         (item) => item.id !== action.payload
