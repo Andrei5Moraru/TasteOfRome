@@ -1,19 +1,18 @@
 import { BrowserRouter, Route } from 'react-router-dom';
 import React from 'react';
 import HomePage from "./components/HomePage";
-import Book from "./components/book";
-// import ThankYou from "./components/thankYou";
-import Navbar from "./components/navbar";
+import Book from "./components/Book";
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import "tailwindcss/tailwind.css";
 import RegistrationPage from './components/RegistrationPage';
 import Login from './components/Login';
-import Menu from './components/menu';
-import Delivery from './components/delivery';
+import Menu from './components/Menu';
+import Delivery from './components/Delivery';
 import Cart from './components/cart/Cart';
 import Checkout from './components/Checkout';
-import Thankyou from './components/thankyou';
-import Profile from './components/profile';
+import Thankyou from './components/Thankyou';
+import Profile from './components/Profile';
 import ThankYouOrder from './components/ThankYouOrder';
 
 function App() {

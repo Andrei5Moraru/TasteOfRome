@@ -7,7 +7,7 @@ import { sumItems } from "./CartReducer";
 const Cart = () => {
 
   const { showCart, cartItems, showHideCart, removeAll } = useContext(CartContext);
-  
+
   return (
     <div>
       {showCart && (
@@ -24,24 +24,24 @@ const Cart = () => {
             {cartItems.length === 0 ? (
               <h4>Cart is Empty</h4>
             ) : (
-              <ul>
+              <div>
                 {cartItems.map((item) => (
-                  <CartItem item={item} />
+                  <CartItem item={item} key={item.id} />
                 ))}
                 <button className='font-bold mb-2' onClick={() => removeAll()}>
-          Remove All
-        </button>
+                  Remove All
+                </button>
                 <div className='Cart__cartTotal flex justify-between'>
                   <div className=" font-bold">Cart Total</div>
 
                   <div className=" font-bold" style={{ marginLeft: 5 }}>
                     {sumItems(cartItems).total}RON
                   </div>
-                  
+
                 </div>
 
                 <div><NavLink to='/checkout' className='flex justify-center mr-auto ml-auto bg-red-900 text-yellow-100 rounded' onClick={showHideCart} >Checkout</NavLink></div>
-              </ul>
+              </div>
             )}
           </div>
 

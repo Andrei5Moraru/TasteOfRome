@@ -51,7 +51,7 @@ const Navbar = () => {
                         {firstName ?
                             <Fragment>
                                 <li><NavLink to="/profile">Welcome, {firstName}</NavLink></li>
-                                <li><button class="fas fa-sign-out-alt" onClick={() => setFirstName(null)}>Logout</button></li>
+                                <li><NavLink to="/" onClick={() => setFirstName(null)}><div className="fas fa-sign-out-alt"></div>Logout</NavLink></li>
                             </Fragment>
                             : <Fragment>
                                 <li> <NavLink to='/register' exact activeStyle={{ color: 'white' }}>Sign Up</NavLink></li>

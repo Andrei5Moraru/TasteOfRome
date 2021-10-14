@@ -14,7 +14,7 @@ const Categories = ({ filterItems }) => {
     fetchItems()
   }, [])
   const allCategories = ['all', ...new Set(menu.map(menu => menu.category))];
-  
+
   // const [categories, setCategories] = useState(allCategories)
 
   return <div className='btn-container'>

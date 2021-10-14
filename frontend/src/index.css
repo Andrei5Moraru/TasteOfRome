@@ -1,13 +1,10 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-image: url('https://mywholewall.com/wp-content/uploads/2018/12/1090383.jpg'); */
@@ -106,7 +103,7 @@ code {
 
 
 .logo{
-	background-image: ;
+
   font-weight: bold;
   font-size: xx-large;
   color:white;
@@ -1422,10 +1419,6 @@ span.close_sp:before {
 	form.hr_book_form  div.left{
 		float: none;
 		width: 100%;
-	}
-	
-	div.on_parallax {
-		
 	}
 	
 	div.parallax_item {

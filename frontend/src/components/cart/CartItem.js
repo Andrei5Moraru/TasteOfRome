@@ -8,7 +8,7 @@ const CartItem = ({ item }) => {
   return (
 
       <div className='CartItem__item text-black p-10 flex justify-between '  >
-        <img src={item.image} alt='' className="photo " width="100" class="rounded-full mr-16"  />
+        <img src={item.image} alt='' className="rounded-full mr-16" width="100"  />
         <div className="mt-5 font-bold ">
           {item.name} {formatCurrency(`${item.price}`, opts)}
         </div>

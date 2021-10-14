@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Categories from './categoryMenu';
+import Categories from './CategoryMenu';
 
 function Menu() {
   const [menu, setMenu] = useState([]);

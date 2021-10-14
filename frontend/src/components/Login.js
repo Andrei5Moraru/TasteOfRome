@@ -23,10 +23,10 @@ const Login = (props) => {
         setPassword(password);
     };
 
-    const handleSubmit= (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-      }
-   
+    }
+
     const handleLogin = async () => {
         const response = await axios.post("http://localhost:8080/api/v1/login", {
             email,
@@ -38,7 +38,7 @@ const Login = (props) => {
     }
 
 
-    return ( 
+    return (
         <div className="flex flex-col ml-auto mr-auto mb-96  mt-44 w-full max-w-md px-4 py-8 bg-white bg-opacity-70 rounded-lg shadow dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10">
             <div className="self-center mb-6 text-xl font-bold text-gray-600 sm:text-2xl dark:text-white">
                 Login To Your Account
@@ -55,7 +55,7 @@ const Login = (props) => {
                                     </path>
                                 </svg>
                             </span>
-                            <input type="text" id="sign-in-email" className=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your email" onChange={onChangeEmail} required />
+                            <input type="email" id="sign-in-email" className=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your email" onChange={onChangeEmail} required />
                         </div>
                     </div>
                     <div className="flex flex-col mb-6">

@@ -8,7 +8,7 @@ const RegistrationPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [contactNumber, setPhoneNumber] = useState("");
-    const [role, setRole] = useState("USER");
+    const [role] = useState("USER");
 
     const history = useHistory();
 
@@ -59,10 +59,7 @@ const RegistrationPage = () => {
 
         })
 
-            .then(axios.spread((req1, req2) => {
-                // output of req.
 
-            }));
 
         history.push("/login");
 
@@ -89,25 +86,25 @@ const RegistrationPage = () => {
 
                     <div className="flex gap-4 mb-2">
                         <div className=" relative ">
-                            <input type="text" id="create-account-first-name" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" name="First name" placeholder="First name" onChange={onChangeFirstName} required/>
+                            <input type="text" id="create-account-first-name" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" name="First name" placeholder="First name" onChange={onChangeFirstName} required />
                         </div>
                         <div className=" relative ">
-                            <input type="text" id="create-account-last-name" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" name="Last name" placeholder="Last name" onChange={onChangeLastName} required/>
-                        </div>
-                    </div>
-                    <div className="flex flex-col mb-2">
-                        <div className=" relative ">
-                            <input type="text" id="create-account-email" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" name="Email" placeholder="Email" type="email" onChange={onChangeEmail} required/>
+                            <input type="text" id="create-account-last-name" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" name="Last name" placeholder="Last name" onChange={onChangeLastName} required />
                         </div>
                     </div>
                     <div className="flex flex-col mb-2">
                         <div className=" relative ">
-                            <input type="text" id="create-account-number" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" name="Number" placeholder="Phone Number" onChange={onChangePhoneNumber} required/>
+                            <input type="email" id="create-account-email" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" name="Email" placeholder="Email" onChange={onChangeEmail} required />
                         </div>
                     </div>
                     <div className="flex flex-col mb-2">
                         <div className=" relative ">
-                            <input type="text" id="create-account-password" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" name="Password" placeholder="Password" type="password" onChange={onChangePassword} required/>
+                            <input type="tel" pattern="[0-9]{10}" id="create-account-number" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" name="Number" placeholder="Phone Number" onChange={onChangePhoneNumber} required />
+                        </div>
+                    </div>
+                    <div className="flex flex-col mb-2">
+                        <div className=" relative ">
+                            <input type="password" id="create-account-password" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" name="Password" placeholder="Password" onChange={onChangePassword} required />
                         </div>
                     </div>
                     <div className="flex w-full my-4">
